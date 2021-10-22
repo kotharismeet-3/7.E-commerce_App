@@ -9,7 +9,7 @@ Micro-service based App
 5. Formik
 6. [tailwind config](https://tailwindcss.com/docs/guides/create-react-app#setting-up-tailwind-css)
 
-##backend dependencies
+## backend dependencies
 
 1. express
 2. pg(Postgres Database)
