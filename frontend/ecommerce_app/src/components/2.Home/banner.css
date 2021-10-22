@@ -1,0 +1,9 @@
+.home {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner_image {
+    width: 100%;
+    mask-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0));    
+}
