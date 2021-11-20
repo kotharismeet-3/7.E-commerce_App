@@ -1,12 +1,26 @@
-import dotenv from 'dotenv';
-import express from 'express';
-import connectDB from './mongo_db.js';
-import products from './dummydata.js';
+const dotenv = require( 'dotenv');
+const express = require( 'express');
+const connectDB = require( './models/mongo_db.js');
+const products = require( './data/dummydata.js');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
 
 dotenv.config();
-connectDB();
+connectDB(); 
+
+require( './services/passport')(passport);
 
 const app = express();
+app.use(
+    cookieSession({
+        maxAge: 30*24*60*60*1000,
+        keys: [keys.cookieKey]
+    })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+require('./routes/authRoutes.js')(app);
 const port = 5000;
 
 app.get('/api/product',(req,res) => {
