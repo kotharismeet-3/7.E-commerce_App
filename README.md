@@ -13,17 +13,16 @@ Micro-service based App
 
 1. express
 2. pg(Postgres Database)
-3. 2. cors
-3. pg (Database / Buyer) 
-4. mongo (Database / Seller) 
-5. gRPC (Selling Items Streams) 
-6. RabbitMQ (Verification Code emails / Bill Receipt) 
-7. bcrypt (Hashing) 
-8. jwt (Authentication / Seller) 
-9. OAuth (Buyer) 
-10. http-proxy-middleware (API Gateway) 
-11. KeyCloak (API Authentication) 
-12. express-rate-limit (API Rate Limit)
+3. cors
+4. pg (Database / Buyer) 
+5. mongo (Database / Seller) 
+7. RabbitMQ (Verification Code emails / Bill Receipt) 
+8. bcrypt (Hashing) 
+9. jwt (Authentication / Seller) 
+10. passport.js for OAuth & passport-google-oauth20 (<!-- kssk3487@gmail.com -->) 
+11. http-proxy-middleware (API Gateway) 
+12. KeyCloak (API Authentication) 
+13. express-rate-limit (API Rate Limit)
 
 <!--19. kafka-node (Distributed Transaction)-->
 
