@@ -1,4 +1,3 @@
-//const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 require('../models/userModel');
@@ -12,9 +11,11 @@ module.exports = function (passport) {
         clientSecret: process.env.GOOGLE_SECRET_KEY,
         callbackURL: 'http://localhost:5000/auth/google/callback'
         },  async (acessToken,refreshToken,profile,done) => {
-            //console.log(profile);
+            console.log(profile);
             const newUser = {
-                googleId: profile.id
+                name: profile.name.givenName,
+                email: profile.emails[0].value,
+                password: 'tets@1234'                
             } 
             try {
                 let user = await User.findOne({googleId:profile.id});
