@@ -12,18 +12,13 @@ Micro-service based App
 ## backend dependencies
 
 1. express
-2. pg(Postgres Database)
-3. cors
-4. pg (Database / Buyer) 
-5. mongo (Database / Seller) 
-7. RabbitMQ (Verification Code emails / Bill Receipt) 
-8. bcrypt (Hashing) 
-9. jwt (Authentication / Seller) 
-10. passport.js for OAuth & passport-google-oauth20 (<!-- kssk3487@gmail.com -->) 
-11. http-proxy-middleware (API Gateway) 
-12. KeyCloak (API Authentication) 
-13. express-rate-limit (API Rate Limit)
+2. dotenv
+3. cors 
+4. mongooose (Database / Seller)  
+5. express-session
+6.  passport.js for OAuth & passport-google-oauth20 (<!-- kssk3487@gmail.com -->) 
+7.  http-proxy-middleware (API Gateway) 
+8.  express-rate-limit (API Rate Limit)
 
 <!--19. kafka-node (Distributed Transaction)-->
 
-### Docker
