@@ -19,7 +19,7 @@ function Navbar() {
             </div>
 
             <div className="nav">
-                <Link to="/login" className="link">
+                <Link to="/auth/google" className="link">
                     <div className="option">
                             <span className="line_one">Hello</span>
                             <span className="line_two">Sign in</span>

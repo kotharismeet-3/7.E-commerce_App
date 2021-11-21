@@ -8,9 +8,8 @@ import ProductDetail from '../3. Products/ProductDetail';
 function App () {
   return (
     <Router>
-      <Switch>        
-        <Route path='/login'></Route>
-        <Route path='/signup'></Route>
+      <Switch>      
+        <Route path='/auth/google'></Route>
         <Route path='/checkout'></Route>
         <Route path='/product/:id' component={ProductDetail}></Route>
         <Route exact path='/'>
