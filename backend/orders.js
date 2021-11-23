@@ -1,30 +1,16 @@
-const dotenv = require( 'dotenv');
 const express = require( 'express');
+const dotenv = require( 'dotenv');
+const cors = require('cors');
 const connectDB = require( './models/mongo_db.js');
-const session = require('express-session');
-const passport = require('passport');
 
 dotenv.config();
 connectDB(); 
 
-require( './services/passport')(passport);
-
 const app = express();
-app.use(
-    session({
-        secret: process.env.cookieKey,
-        resave: false,
-        saveUninitialized: false
-    })
-);
-
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(cors());
 app.use(express.json());
-require('./routes/authRoutes.js')(app);
-require('./routes/orderRoutes.js')(app);
 const port = 5050;
-
+require('./routes/orderRoutes.js')(app);
 
 app.use((err, req, res, next)=> {
     const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
