@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 //console.log('User Schema created!');
 
 const userSchema = mongoose.Schema({
+    googleId : {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true

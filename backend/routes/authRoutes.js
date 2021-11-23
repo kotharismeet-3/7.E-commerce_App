@@ -13,6 +13,8 @@ module.exports = (app) => {
                     // Successful authentication, redirect home.
                     req.login(req.user, (err)=>{
                         if(err) return err;
+                        const cookie = req.user.id;
+                        res.setHeader("set-cookie",[cookie]);
                         return res.redirect('/');
 
                     });

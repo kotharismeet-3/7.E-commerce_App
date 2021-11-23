@@ -28,11 +28,11 @@ require('./services/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 require('./routes/authRoutes.js')(app);
-const port = 5000;
+const port = 4950;
 
 app.use(createProxyMiddleware('/', { 
-    target: 'http://localhost:3000/',
-    changeOrigin: true 
+    "target" : 'http://localhost:3000/',
+    "changeOrigin" : true 
     }
 ));
 
