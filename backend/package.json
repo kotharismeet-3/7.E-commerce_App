@@ -23,10 +23,11 @@
   },
   "scripts": {
     "start": "node index",
-    "server": "nodemon products",
-    "order": "nodemon orders",
+    "server": "nodemon index.js",
+    "products": "nodemon products.js",
+    "order": "nodemon orders.js",
     "client": "npm run start --prefix ../frontend/ecommerce_app",
-    "dev": "concurrently \"npm run server\" \"npm run order\"",
+    "dev": "concurrently \"npm run server\" \"npm run products\" \"npm run order\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
