@@ -6,6 +6,7 @@ const connectDB = require( './models/mongo_db.js');
 dotenv.config();
 connectDB(); 
 
+const app = express();
 app.use(cors());
 app.use(express.json());
 const port = 5000;
