@@ -3,7 +3,7 @@ import Rating from './Rating';
 import products from './dummydata';
 
 const ProductDetail = ({match}) => {
-    //console.log({match.params.id});
+    
 
     const product = products.find((p) => p._id === match.params.id);
     return (
@@ -28,11 +28,7 @@ const ProductDetail = ({match}) => {
                 {/*Button*/}
                 <btn className="btn">
                     Buy Now
-                </btn>
-                {/*Button*/}
-                <btn className="btn">
-                    Add to Cart
-                </btn> 
+                </btn>                
             </div>
             
           </div>

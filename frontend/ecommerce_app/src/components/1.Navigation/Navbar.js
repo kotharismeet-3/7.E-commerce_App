@@ -1,9 +1,20 @@
-import React from 'react';
+import React,{useState} from 'react';
+import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {FaSearch,FaShoppingCart} from 'react-icons/fa';
 import './Navbar.css';
 
-function Navbar() {
+const Navbar = () => {
+
+    const [user_name,setUser_name] = useState('');    
+
+    const onLoad = async () => {
+        const response = await axios.get("http://localhost:4950/current_user");        
+        setUser_name(response.data.name);
+      };
+    
+      onLoad();
+
     return (
         <div className="navbar">
             <Link to="/" className="link">
@@ -22,7 +33,10 @@ function Navbar() {
                 <Link to="/auth/google" className="link">
                     <div className="option">
                             <span className="line_one">Hello</span>
-                            <span className="line_two">Sign in</span>
+                            {(user_name !== '' ? 
+                                <span className="line_two"> {user_name}</span> : 
+                                <span className="line_two">Sign in</span>  
+                            )}                            
                     </div>
                 </Link>
                 <Link to="" className="link">

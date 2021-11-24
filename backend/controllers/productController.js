@@ -19,6 +19,13 @@ const getProductById = asyncHandler(async (req, res) => {
 
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
+  const userID = req.body.userID;
+  //console.log(product.user.toString(),userID);
+  if(product.user.toString() != userID){
+    res.status(403);
+    throw new Error("Can Only Update your Product");
+    return;
+  }
   if (product) {
     await product.remove();
     res.json({ message: "Product removed" });
@@ -67,11 +74,13 @@ const updateProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
   //console.log(category);
-  if(product.user != userID){
+  /*if(product.user != userID){
     res.status(403);
     throw new Error("Can Only Update your Product");
     return;
-  }
+  }*/
+  //console.log(product);
+  //console.log(req.body);
 
   if (product) {
     product.name = name ? name : product.name;

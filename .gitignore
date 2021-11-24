@@ -2,3 +2,4 @@ backend/node_modules
 frontend/ecommerce_app/node_modules
 
 backend/.env
+docker-compose.yml

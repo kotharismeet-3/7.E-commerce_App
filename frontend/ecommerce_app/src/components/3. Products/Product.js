@@ -6,7 +6,7 @@ const Product = ({product}) => {
     return (
         <div class="flex flex-col items-center mt-4 border-4 font-sans">
             {/*img*/}
-            <img src={product.image} alt={product._id} class="" />
+            <img src={product.image} alt={product._id} className="" />
             {/*Name*/}
             <Link to={`/product/${product._id}`} className="text-gray-900 text-2xl p-4">
                 {product.name}
@@ -22,10 +22,7 @@ const Product = ({product}) => {
             <btn className="btn mb-4">
                 Buy Now
             </btn>
-            {/*Button*/}
-            <btn className="btn">
-                Add to Cart
-            </btn>
+            {/*Button*/}            
         </div>
     )
 }
