@@ -36,7 +36,4 @@ app.use(createProxyMiddleware('/', {
     }
 ));
 
-require('./routes/productRoutes.js')(app);
-require('./routes/orderRoutes.js')(app);
-
 app.listen(port,console.log(`Server running on post${port}`));

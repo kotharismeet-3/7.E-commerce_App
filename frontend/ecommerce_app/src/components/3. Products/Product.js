@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Rating from './Rating';
 
-const Product = ({product}) => {
+const Product = ({product}) => {    
     return (
         <div class="flex flex-col items-center mt-4 border-4 font-sans">
             {/*img*/}
@@ -20,9 +20,9 @@ const Product = ({product}) => {
             <div class="text-yellow-500 mb-4"><Rating value={product.rating} text={product.numReviews} /></div>            
             {/*Button*/}
             <btn className="btn mb-4">
-                Buy Now
+                <Link to={`/myOrder/${product._id}`}>Buy Now</Link>
             </btn>
-            {/*Button*/}            
+            {/*Button*/}                                            
         </div>
     )
 }

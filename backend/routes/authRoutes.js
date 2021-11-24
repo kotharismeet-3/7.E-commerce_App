@@ -1,4 +1,6 @@
 const passport = require('passport');
+//const User = require('../models/userModel');
+let user;
 
 module.exports = (app) => {
     app.get('/auth/google', passport.authenticate('google', {
@@ -11,10 +13,9 @@ module.exports = (app) => {
             { failureRedirect: '/login' }),
                 (req, res) => {
                     // Successful authentication, redirect home.
-                    req.login(req.user, (err)=>{
+                    req.login(req.user, (err) => {
                         if(err) return err;
-                        const cookie = req.user.id;
-                        res.setHeader("set-cookie",[cookie]);
+                        user = req.user;
                         return res.redirect('/');
 
                     });
@@ -26,7 +27,9 @@ module.exports = (app) => {
         res.redirect('/');
     })
 
-    app.get('/current_user', (req,res)=>{
+    app.get('/current_user', async  (req,res)=>{
+        //if(req.user) let user = await User.findById(req.user._id);        
+        //console.log(req.user._id);
         res.send(req.user);
     });
 };

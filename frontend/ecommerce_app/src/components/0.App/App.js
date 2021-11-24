@@ -7,6 +7,7 @@ import ProductDetail from '../3. Products/ProductDetail';
 import Createproducts from '../3. Products/Createproducts';
 import Updateproducts from '../3. Products/Updateproducts';
 import DeleteProduct from '../3. Products/DeleteProduct';
+import CreateOrder from '../9.Orders/CreateOrder';
 
 const App = () => {
   //docker build -t servernodeapp .      
@@ -21,7 +22,7 @@ const App = () => {
         <Route exact path='/product/:id' component={ProductDetail} ></Route>
         <Route exact path='/product/update/:id' component={Updateproducts} ></Route>
         <Route exact path='/product/delete/:id' component={DeleteProduct} ></Route>
-        
+        <Route exact path='/myOrder/:id' component={CreateOrder}></Route>
         <Route exact path='/'>
           <Navbar />          
           <Banner />

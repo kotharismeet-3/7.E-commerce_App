@@ -48,11 +48,11 @@ const addOrderItems = asyncHandler(async (req, res) => {
     });
 
     const createdOrder = await order.save();
-
+    //console.log("I hope this works this time!");
     await axios.put(`http://localhost:5000/api/product/${orderItems.product}`, {
       "countInStock": qty_available - orderItems.qty,
     });
-
+    
     res.status(201).json(createdOrder);
   }
 });
